@@ -1,0 +1,246 @@
+<main class="container-md">
+	<section class="container-fluid mt-2 mb-2 text-justify">
+		<section class="row mt-2 mb-2">
+			<img src="assets/imagens/angularjs.jpg" alt="menino em cima do mundo"
+				class="img-fluid img-thumbnail mundo_angular mt-3 mb-3" id="topo">
+			<article>
+				<h2 id="sobre"> ANGULAR: O que é? </h2>
+				<p>
+					O Angular é uma framework de estrutura web baseada em Typescript e atualmente está na versão 12. A
+					sua estrutura é baseada em componentes e oferece
+					maior desempenho para grandes e complexos projetos.
+				</p>
+				<p>
+					Esta ferramenta é de código aberto e atualmente é mantida pela Google, desta forma, está sempre em
+					contínuo desenvolvimento.
+				</p>
+				<p>
+					O seu suporte é multiplataforma e é muito usado para o desenvolvimento front-end.
+				</p>
+
+				<h2> Estrutura Modular </h2>
+				<p>
+					Como dito anteriormente, o Angular é estruturado em módulos, mas o que isso quer dizer? Isso
+					significa que todo o seu funcionamento é dividido e desenvolvido em partes, ou seja, dentro de cada
+					projeto haverá:
+				</p>
+				<ul>
+					<li>
+						<strong>Módulos (modules):</strong> é a parte de um todo, como um subsistema do app (parte
+						principal);
+					</li>
+					<li>
+						<strong>Componentes (components):</strong> são os blocos de códigos responsáveis pela
+						comunicação com o html;
+					</li>
+					<li>
+						<strong>Serviços (services):</strong> é onde colocamos toda a parte lógica, a 'ação' do código
+						em si. Tem relação com os componentes.
+					</li>
+				</ul>
+				<img src="assets/imagens/angular.jpg" alt="menino em cima do mundo"
+					class="img-fluid img-thumbnail mundo_angular mt-3 mb-3">
+
+				<h2> Motivos para aprender Angular: </h2>
+				<p>
+					O Angular é muito usado e procurado nos desenvolvedores hoje em dia, pois o desempenho dos projetos
+					são mais rápidos e fáceis de organizar. As empresas tem aplicado esta framework para grandes
+					projetos e são poucos os programadores que tem domínio nela. Além do mais, o seu uso ajuda a dividir
+					as tarefas entre a equipe, a encontrar os bugs mais facilmente e a reutilizar os códigos já feitos.
+				</p>
+				<p>
+					Desta forma, ensinaremos aqui o básico para que você consiga implementar o primeiro projeto. Siga os
+					passos abaixo e em caso de dúvidas, vá para a seção de links úteis no rodapé.
+				</p>
+
+				<h2 id="preparando"> Preparando o ambiente </h2>
+				<p>
+					1. Para instalar a framework, é necessário utilizar o Angular CLI (Command Line Interface), ao
+					utilizar o -g, ele já será instalado globalmente no seu computador. Sendo assim, abra o prompt de
+					comando e execute:
+				</p>
+				<p class="codigos text-center">
+					npm install -g @angular/cli
+				</p>
+
+				<p>
+					Obs: Caso queira consultar a versão, você pode digitar este comando:
+				</p>
+
+				<p class="codigos text-center">
+					ng --version
+				</p>
+
+				<p>
+					2. Entre na pasta escolhida (cd + nome da pasta) e execute o comando que vai criar o novo projeto. O
+					nome do nosso projeto aqui é teste, mas você deve nomeá-lo como preferir.
+				</p>
+
+				<p class="codigos text-center">
+					ng new teste
+				</p>
+				<p>
+					Este comando vai criar toda a estrutura do seu projeto. Quando iniciar, será necessário escolher se
+					quer já criar as rotas e o estilo inicial, por ora, escolha apenas N e CSS.
+				</p>
+
+				<p>
+					3. Acesse a pasta teste (cd + nome do projeto) e execute o comando que vai exercer a função de
+					"servidor" do projeto, com ela você conseguirá acompanhar no navegador e no prompt as mudanças,
+					falhas, etc.
+				</p>
+
+				<p class="codigos text-center">
+					ng serve
+				</p>
+
+				<p>
+					Após o prompt exibir "Compiled successfully", você pode acessar o endereço que ele sugerir,
+					geralmente é colocado em: localhost:4200, mas caso esteja usando, ele poderá sugerir outras portas.
+					Desta forma, a visualização deverá ser a seguinte:
+				</p>
+				<img src="assets/imagens/primeira-pagina.png" alt="tela inicial do angular"
+					class="img-fluid img-thumbnail">
+
+				<p>
+					4. Cada parte do projeto pode ser dividida em um módulo, por exemplo, módulo cliente, módulo
+					funcionários, módulo produtos, etc. Para criar um módulo, você deve executar o comando desta forma:
+				</p>
+				<p class="codigos text-center">
+					ng g module testando
+				</p>
+
+				<p>
+					5. O módulo APP que é o principal, precisa saber da existência deste módulo novo, portanto,
+					utilizando a técnica de barrels, você pode criar um arquivo index.ts dentro da pasta testando e
+					exportar tudo do novo módulo. Após este passo, no arquivo app.module você deve importar o módulo
+					novo. Lembre-se de repetir este processo a cada módulo novo. Também devemos repetir a cada nova
+					pasta criada, pois os componentes precisam conversar entre si, sem a exportação e importação, eles
+					não conseguem se enxergar e a aplicação não rodará.
+				</p>
+
+				<p>
+					6. Feito os passos acima, para criar um componente, você deve executar este comando:
+				</p>
+				<p class="codigos text-center">
+					ng g component testando/meus-componentes
+				</p>
+				<p>
+					Obs: os componentes sempre devem estar dentro do módulo, portanto atente-se em colocar primeiramente
+					a pasta do módulo onde será criado e em seguida, o nome da pasta de componentes. Você pode colocar
+					qualquer nome e depois renomear para 'components'. Faça os mesmos passos do index.ts, exportação e
+					importação.
+				</p>
+
+				<p>
+					8. Como é pelo componente que é feita a comunicação com o html, devemos utilizar a sua tag (criada
+					no arquivo .ts do component) para inserir no html principal, após apagar todo o conteúdo deste
+					arquivo. Ex: &lt;app-testando&gt; &lt;/app-testando&gt;
+				</p>
+
+				<p>
+					9. Os componentes são apenas as regras de negócio da aplicação, ainda precisamos criar as ações,
+					portanto, execute este comando para criar um serviço:
+				</p>
+				<p class="codigos text-center">
+					ng g service testando/services/testar
+				</p>
+				<p>
+					Obs: Para criar os serviços, precisa criar a pasta services dentro do módulo e dar um nome ao
+					serviço criado. Lembrando de novamente executar o processo de criação do index.ts, exportação e
+					importação.
+				</p>
+
+				<p>
+					Estes são os passos básicos para montar a estrutura do seu projeto. Para preencher com o html e css, você deve utilizar de acordo com o que deseja, deixando no principal o que for padrão e comum no projeto, como estilo padrão, header e footer e em cada component pode preencher de acordo com a página. Ainda é possível trabalhar com rotas via Routers. 
+				</p>
+
+				<h2 id="diretivas"> Diretivas </h2>
+				<p>
+					O Angular é repleto de componentes que auxiliam a desenvolver o código, entre estas opções, temos as
+					diretivas. As diretivas nada mais são do que funcionalidades da própria framework, responsáveis por
+					impor comportamento e manipular o DOM.
+				</p>
+				<p>
+					Ou seja, com as diretivas você pode criar comportamentos como se fosse via JavaScript e até mesmo
+					criar a sua própria diretiva com o comando:
+				</p>
+				<p class="codigos text-center">
+					ng g directive testando/shared/teste-concluido
+				</p>
+				<p>
+					Obs: O ideal ao criar uma diretiva é que seja dentro de uma pasta compartilhada (shared). Não há limites de diretivas a serem usadas num projeto.
+				</p>
+				<p>
+					As diretivas mais conhecidas sãs estas a seguir:
+				</p>
+				<ul>
+					<li>
+						<strong>*ngStyle:</strong> usada para alterar o estilo;
+					</li>
+					<li>
+						<strong>*ngClass:</strong> usada para alterar/inserir classes;
+					</li>
+					<li>
+						<strong>*ngIf:</strong> assim como o If de JS, é utilizada para condicionais;
+					</li>
+					<li>
+						<strong>*ngSwitch:</strong> da mesma forma que o If, serve para condicionais específicas;
+					</li>
+					<li>
+						<strong>*ngFor:</strong> também segue o princípio lógico de JS, utilizado para laços de repetição. 
+					</li>
+				</ul>
+
+				<h2 id="data_binding"> Data Binding </h2>
+				<p>
+					O databinding é outra funcionalidade do Angular, na qual permite a vinculação de dados. Exemplos:
+				</p>
+				<ul>
+					<li>
+						&lcub; &lcub; &rcub; &rcub; - <strong>Interpolação (String Interpolation):</strong> geralmente usa o name do atributo ou alguma expressão em JS, como: &lcub; &lcub; title &rcub; &rcub;, para apresentar na tela o valor determinado, sem nenhuma alteração nele internamente. 
+					</li>
+					<li>
+						&lsqb; &rsqb; - <strong>Propriedade Binding (Property Binding ou One Way Binding):</strong> com esta você consegue alterar o conteúdo da propriedade de acordo com que for passado, por exemplo: ( &lsqb; value &rsqb; = &quot; Cancelar &quot;)
+					</li>
+					<li>
+						( ) - <strong> Evento (Event Binding): </strong> semelhante aos eventos de JS, esta funcionalidade serve para chamar os eventos sem o 'on' inicial, por exemplo: onclick &rarr;  (click) ou onblur &rarr; (blur).
+					</li>
+					<li>
+						&lsqb; ( ) &rsqb; - <strong> Dois Caminhos (Two Way Binding):</strong> este serve para conectar o componente e o html ao mesmo tempo, ou seja, como uma via de duas mãos, muito usado para receber dados de formulários html. Para utilizá-lo em forms é necessário importar o módulo de formulário do Angular. 
+					</li>
+				</ul>
+
+				<h2 id="pipe"> Pipes </h2>
+				<p>
+					Outra funcionalidade do Angular muito usada são os Pipes. Estes são filtros que servem como máscara para algumas aplicações. Para criá-lo o processo é bem parecido com os anteriores:
+				</p>
+				<p class="codigos text-center">
+					ng g pipe testando/pipes/data-teste
+				</p>
+				<p>
+					Obs: Assim como as diretivas, os pipes podem ser usados sem limite, mas o ideal é que sejam criados na mesma pasta 'pipes', para facilitar a organização.
+				</p>
+
+				<h2 id="outros"> Outras frameworks </h2>
+				<p>
+					Ainda no projeto de Angular, é possível usar Bootstrap e Jquery, basta fazer primeiramente a instalação via CMD e a importação dos módulos, conforme abaixo:
+				</p>
+				<p class="codigos text-center">
+					npm i --save jquery
+				</p>
+				<p class="codigos text-center">
+					npm i --save bootstrap@4
+				</p>
+				<p>
+					Obs: A versão que você escolher usar em seu projeto deve vir após o @, no caso aqui estamos usando a 4.
+				</p>
+				<p>
+					Após as instalações, abra o arquivo angular.json e insira:
+					"node_modules/jquery/dist/jquery.min.js" (linha 37) e "node_modules/bootstrap/dist/css/bootstrap.min.css" (linha 34). Ao atualizar este arquivo, reinicie o server, pois o arquivo json só é lido uma vez a cada vez que rodar o código.
+				</p>
+			</article>
+		</section>
+
+	</section>
+</main>

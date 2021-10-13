@@ -1,0 +1,22 @@
+
+body{
+	background-color:rgb(255, 255, 255);
+}
+
+#lista_links{
+	list-style-type: square;
+}
+
+footer a{
+	color: aliceblue;
+	padding: 10px;
+}
+
+footer a:hover{
+	color: rgb(245, 242, 32);
+	text-decoration: none;
+}
+
+h4{
+	color: rgb(245, 242, 32);
+}
